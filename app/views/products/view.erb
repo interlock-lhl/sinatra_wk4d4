@@ -1,0 +1,10 @@
+<h1><%= @product.title %></h1>
+
+<b><%= @product.sku %></b>
+
+<b><%= @product.price %></b>
+
+<a href="<%= product_path(@product) %>/edit">Edit</a>
+
+<!-- NOTE why am I using a POST here? -->
+<form method="POST" action="<%= product_path(@product) %>/delete"><input type="submit" value="Delete"></form>

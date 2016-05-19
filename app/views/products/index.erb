@@ -1,0 +1,11 @@
+<h1>Products</h1>
+
+<ul>
+  <!-- refactor to use partial -->
+  <% @products.each do |p| %>
+  <!-- refactor to use helper? -->
+  <li><a href="/products/<%= p.id %>"><%= p.title %></a> $<%= p.price %> [<%= p.sku %>]</li>
+  <% end %>
+</ul>
+
+<a href="/products/new">New Product</a>

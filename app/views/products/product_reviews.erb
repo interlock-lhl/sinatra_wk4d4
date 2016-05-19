@@ -1,0 +1,13 @@
+<h1><%= @product.title %></h1>
+
+<h2>Reviews</h2>
+<% @reviews.each do |r| %>
+<div class="review"><%= r.review %></div>
+<% end %>
+
+<h2>Post a Review</h2>
+<form method="post" action="<%= product_path(@product) %>/reviews">
+  <input name="review[review]">
+  <input name="review[rating]" type="number">
+  <input type="submit" name="Review!">
+</form>
