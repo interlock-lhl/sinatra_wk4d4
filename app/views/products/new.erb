@@ -1,4 +1,11 @@
 <h1>New Product</h1>
+<% if @product.errors.any? %>
+<ul>
+  <% @product.errors.full_messages.each do |e| %>
+    <li><%= e %></li>
+  <% end %>
+</ul>
+<% end %>
 <form method="post" action="/products">
   <div class="form-group">
    <label for="productTitle">Title</label>
