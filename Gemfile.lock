@@ -24,12 +24,15 @@ GEM
     method_source (0.8.2)
     minitest (5.8.3)
     multi_json (1.11.2)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (2.15.3)
     rack (1.6.4)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -76,8 +79,10 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  pg
   pry
   puma
+  rack-flash3
   rake
   shotgun
   sinatra
@@ -85,3 +90,6 @@ DEPENDENCIES
   sinatra-contrib
   sqlite3
   tux
+
+BUNDLED WITH
+   1.12.1

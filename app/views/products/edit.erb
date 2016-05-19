@@ -1,2 +1,5 @@
 <h1>Edit Product</h1>
-<!-- TODO is this going to look allot like our new? -->
+<%= erb :"_errors", locals: { errors: @product.errors } %>
+<form method="post" action="/products/<%= @product.id %>">
+  <%= erb :"products/_product_form" %>
+</form>

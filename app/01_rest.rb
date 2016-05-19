@@ -6,6 +6,7 @@
 
 # CREATE, the form to post
 get '/products/new' do
+  @product = Product.new
   erb :"products/new"
 end
 
@@ -13,6 +14,7 @@ end
 post '/products' do
   @product = Product.new(params[:product])
   if @product.save
+    flash[:notice] = "We saved your product!"
     redirect '/products'
   else
     erb :"products/new"
@@ -53,6 +55,10 @@ end
 post '/products/:id/delete' do
   @product = Product.find(params[:id])
   # TODO what if we fail to delete the product?
-  @product.destroy
+  if @product.destroy
+    flash[:notice] = "Product deleted!"
+  else
+    flash[:notice] = "There was an issue deleted that product"
+  end
   redirect '/products'
 end

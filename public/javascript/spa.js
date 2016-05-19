@@ -22,7 +22,7 @@ $(function() {
     var product = {
       title: $(this).find("[name=title]").val(),
       sku: $(this).find("[name=sku]").val(),
-      price: $(this).find("[name=title]").val()
+      price: $(this).find("[name=price]").val()
     };
     $.ajax('/api/products', {
       method: 'POST',

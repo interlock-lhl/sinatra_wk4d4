@@ -6,7 +6,9 @@
 post '/api/products' do
   # Often we want to support posted query parameters AND JSON in the body of the post.
   # Some API's prefer or enforce one over the other. Ours supports both!
-  product_hash = params
+  product_hash = params # /api/products?title=Meow&sku=ACKBAR&price=1299
+
+  # In the HTTP body we have `{"title": "Meow", "sku": "BARBAR", "price": 1233}`
   product_hash = JSON.parse(request.body.read).symbolize_keys unless product_hash[:title]
 
   @product = Product.new(product_hash)

@@ -7,6 +7,7 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
+require 'rack-flash'
 
 require 'pry'
 
@@ -19,6 +20,7 @@ configure do
   set :server, :puma
 
   enable :sessions
+  use Rack::Flash
   set :session_secret, ENV['SESSION_KEY'] || 'lighthouselabssecret'
 
   set :environment, ENV['RACK_ENV'] || :development

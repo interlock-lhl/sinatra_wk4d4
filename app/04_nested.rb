@@ -5,7 +5,7 @@
 get '/products/:id/reviews' do
   @product = Product.find(params[:id])
   @reviews = @product.reviews
-  erb :product_reviews
+  erb :"products/product_reviews"
 end
 
 post '/products/:id/reviews' do
@@ -15,6 +15,6 @@ post '/products/:id/reviews' do
   # TODO flash!
   # TODO error check!
   review.save
-  redirect product_path(@product) + "/reviews"
+  redirect products_path(@product) + "/reviews"
 
 end

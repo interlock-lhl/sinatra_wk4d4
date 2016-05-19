@@ -4,7 +4,7 @@
   <!-- refactor to use partial -->
   <% @products.each do |p| %>
   <!-- refactor to use helper? -->
-  <li><a href="/products/<%= p.id %>"><%= p.title %></a> $<%= p.price %> [<%= p.sku %>]</li>
+  <li><a href="<%= products_path(p) %>"><%= p.title %></a> $<%= format_price(p.price) %> [<%= p.sku %>]</li>
   <% end %>
 </ul>
 

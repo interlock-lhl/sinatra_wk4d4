@@ -1,1 +1,16 @@
-<!-- common form for product goes in here? -->
+<div class="form-group">
+  <label for="productTitle">Title</label>
+  <input name="product[title]" value="<%= @product.title%>" class="form-control" id="productTitle" placeholder="Title">
+</div>
+
+<div class="form-group">
+  <label for="productSKU">SKU</label>
+  <input name="product[sku]" value="<%= @product.sku %>" class="form-control" id="productSKU" placeholder="SKU">
+</div>
+
+<div class="form-group">
+  <label for="productPrice">Price</label>
+  <input name="product[price]" value="<%= @product.price %>" class="form-control" id="productPrice" placeholder="$$$">
+</div>
+
+<input type="submit" class="btn btn-default">

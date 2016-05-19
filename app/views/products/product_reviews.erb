@@ -6,7 +6,7 @@
 <% end %>
 
 <h2>Post a Review</h2>
-<form method="post" action="<%= product_path(@product) %>/reviews">
+<form method="post" action="<%= products_path(@product) %>/reviews">
   <input name="review[review]">
   <input name="review[rating]" type="number">
   <input type="submit" name="Review!">
